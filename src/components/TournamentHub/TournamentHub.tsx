@@ -20,19 +20,19 @@ type Tournament = {
 };
 
 const TOURNAMENTS: Tournament[] = [
-  { id: "t1", game: "Valorant", title: "Valorant Open", startsAt: "Start 20S 180V/2012", teams: 32, banner: "/elements/futuristic-ninja-digital-art.jpg", logo: "/elements/vampire.png", prizePool: "$1,500" },
-  { id: "t2", game: "League of Legends", title: "League Masters", startsAt: "Start 20S 130V/2022", teams: 64, banner: "/elements/2151624781.jpg", logo: "/elements/2151500487.jpg", prizePool: "$4,000" },
-  { id: "t3", game: "Valorant", title: "Valorant Metro", startsAt: "Start 20S 180V/2022", teams: 48, banner: "/elements/2151624782.jpg", logo: "/elements/cartoon-soldier-with-combat-war.jpg", prizePool: "$2,000" },
-  { id: "t4", game: "League of Legends", title: "League: Torrends", startsAt: "Start 20S 100V/2013", teams: 16, banner: "/elements/man-wearing-vr-glasses-gaming.jpg", prizePool: "$3,300", featured: true },
-  { id: "t5", game: "Apex", title: "Garamont Gorines", startsAt: "Start 20S 100V/2017", teams: 24, banner: "/elements/scary-monster-foggy-forest-night.jpg", prizePool: "$8,700", featured: true },
+  { id: "t1", game: "Valorant", title: "Valorant Open", startsAt: "Start 20S 180V/2012", teams: 32, banner: "elements/futuristic-ninja-digital-art.jpg", logo: "elements/vampire.png", prizePool: "$1,500" },
+  { id: "t2", game: "League of Legends", title: "League Masters", startsAt: "Start 20S 130V/2022", teams: 64, banner: "elements/2151624781.jpg", logo: "elements/2151500487.jpg", prizePool: "$4,000" },
+  { id: "t3", game: "Valorant", title: "Valorant Metro", startsAt: "Start 20S 180V/2022", teams: 48, banner: "elements/2151624782.jpg", logo: "elements/cartoon-soldier-with-combat-war.jpg", prizePool: "$2,000" },
+  { id: "t4", game: "League of Legends", title: "League: Torrends", startsAt: "Start 20S 100V/2013", teams: 16, banner: "elements/man-wearing-vr-glasses-gaming.jpg", prizePool: "$3,300", featured: true },
+  { id: "t5", game: "Apex", title: "Garamont Gorines", startsAt: "Start 20S 100V/2017", teams: 24, banner: "elements/scary-monster-foggy-forest-night.jpg", prizePool: "$8,700", featured: true },
 ];
 
 type Winner = { id: string; name: string; handle: string; avatar: string };
 const WINNERS: Winner[] = [
-  { id: "w1", name: "Moritz", handle: "@Goaramant", avatar: "/elements/vampire.png" },
-  { id: "w2", name: "Glaries", handle: "Tournament", avatar: "/elements/bat_5922341.png" },
-  { id: "w3", name: "Gleres", handle: "Tournament", avatar: "/elements/2151624781.jpg" },
-  { id: "w4", name: "Glawes", handle: "Tournament", avatar: "/elements/2151624782.jpg" },
+  { id: "w1", name: "Moritz", handle: "@Goaramant", avatar: "elements/vampire.png" },
+  { id: "w2", name: "Glaries", handle: "Tournament", avatar: "elements/bat_5922341.png" },
+  { id: "w3", name: "Gleres", handle: "Tournament", avatar: "elements/2151624781.jpg" },
+  { id: "w4", name: "Glawes", handle: "Tournament", avatar: "elements/2151624782.jpg" },
 ];
 
 /* ===================== UI Bits ===================== */
@@ -64,7 +64,7 @@ function CreateModal({
       game,
       startsAt: date,
       teams: 0,
-      banner: "/elements/2151624782.jpg",
+      banner: "elements/2151624782.jpg",
       prizePool: "$500",
       my: true,
     });
@@ -115,7 +115,7 @@ export default function TournamentHub() {
   const [joined, setJoined] = useState<Record<string, boolean>>({});
   const [items, setItems] = useState<Tournament[]>(TOURNAMENTS);
   const [openCreate, setOpenCreate] = useState(false);
-  const backgroundUrl = "/elements/view-illuminated-neon-gaming-keyboard-setup-controller_23-2149529367.jpg"
+  const backgroundUrl = "elements/view-illuminated-neon-gaming-keyboard-setup-controller_23-2149529367.jpg"
 
   const filtered = useMemo(() => {
     const base = tab === "mine" ? items.filter((t) => t.my) : items;
@@ -159,7 +159,7 @@ export default function TournamentHub() {
         <div className="relative">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl md:text-3xl font-extrabold tracking-wide">TOURNAMENT HUB</h1>
-            <img src="/elements/bat.png" alt="me" className="hidden sm:block w-9 h-9 rounded-full ring-1 ring-white/20" />
+            <img src="elements/bat.png" alt="me" className="hidden sm:block w-9 h-9 rounded-full ring-1 ring-white/20" />
           </div>
 
           {/* Tabs */}
@@ -281,7 +281,7 @@ export default function TournamentHub() {
             )}
 
             <Card className="p-3 flex items-center gap-3">
-              <img src="/elements/2151500487.jpg" className="w-14 h-12 object-cover rounded-lg" alt="" />
+              <img src="elements/2151500487.jpg" className="w-14 h-12 object-cover rounded-lg" alt="" />
               <div className="flex-1 min-w-0">
                 <p className="font-semibold truncate">Geaple Wriors</p>
                 <p className="text-[11px] text-white/70">Start 20S 100V/2017 • 0mes 01</p>

@@ -1,10 +1,7 @@
 # 🧛‍♂️ Dracula – Gaming Storefront
 
-A modern **gaming e-commerce platform** built with **Next.js 14**, **TailwindCSS**, and **Framer Motion**.  
-The design uses a **dark Dracula-inspired red/black theme** with cinematic motion and glitch typography.  
-Supports full shopping flow – from browsing games, filtering, adding to cart, product details, to checkout and login.
+Draculs - Gaming Template Project is a modern, fully responsive web template built with Next.js, TailwindCSS, and Framer Motion. It is designed for gaming platforms, eSports communities, and online game stores with a dark red-and-black Dracula-inspired theme.
 
-![Dracula Banner](./public/elements/shop/banner-soldier.jpg)
 
 ---
 
@@ -45,24 +42,6 @@ Supports full shopping flow – from browsing games, filtering, adding to cart, 
 
 ---
 
-## 📂 Project Structure
-
-dracula/
-├── app/
-│ ├── components/
-│ │ ├── HeroSection.tsx
-│ │ ├── ShopSection.tsx
-│ │ ├── Cart.tsx
-│ │ └── CheckoutForm.tsx
-│ ├── page.tsx
-│ ├── layout.tsx
-│ └── globals.css
-├── public/
-│ └── elements/shop/ # Game covers, banner, logos
-├── next.config.js
-├── tailwind.config.js
-└── README.md
-
 ## ⚡ Getting Started
 
 1. **Clone the repo**
@@ -73,23 +52,19 @@ dracula/
 
 ## 🎮 Usage
 
-#### Browse games in different tabs (New Releases, Pre-Orders, On Sale, Merchandise).
-
-#### Filter by platform, genre, price range, or publisher.
-
-#### Click ADD TO CART to add items.
-
-#### Open cart via cart icon → see all selected games.
-
-#### Proceed to Checkout → login or sign up → confirm payment.   
+- Browse games in different tabs (New Releases, Pre-Orders, On Sale, Merchandise).
+- Filter by platform, genre, price range, or publisher.
+- Click ADD TO CART to add items.
+- Open cart via cart icon → see all selected games.
+- Proceed to Checkout → login or sign up → confirm payment.   
 
 
 
 ## 📜 License
-#### MIT License © 2025 Dracula Project
+- MIT License © 2025 Dracula Project
 
 ## ❤️ Credits
-#### Design inspiration: Dark Gaming UI concepts
-#### Icons: Lucide
-#### Animations: Framer Motion
-#### Fonts: Teko & Rubik (Google Fonts)
+- Design inspiration: Dark Gaming UI concepts
+- Icons: Lucide
+- Animations: Framer Motion
+- Fonts: Teko & Rubik (Google Fonts)

@@ -341,7 +341,7 @@ export default function ShopSection() {
           className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#7a001a]/50 via-[#2a0005]/40 to-transparent ring-1 ring-white/10"
         >
           <img
-            src="/elements/modern-car-driving-city_23-2151674339.jpg"
+            src="elements/modern-car-driving-city_23-2151674339.jpg"
             alt="Promo"
             className="absolute right-0 top-0 h-full w-[52%] object-cover object-center hidden md:block"
           />

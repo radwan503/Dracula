@@ -318,16 +318,16 @@ function CurvedTitle({ text }: { text: string }) {
 
 export default function HeroSection(props: Props) {
   const {
-    backgroundUrl = "/elements/scary-monster-foggy-forest-night.jpg", // optional overlay texture
-    logoUrl = "/elements/vampire.png",
+    backgroundUrl = "elements/scary-monster-foggy-forest-night.jpg", // optional overlay texture
+    logoUrl = "elements/vampire.png",
     title = "DRACULA",
     kicker = "Beat the Game",
   } = props || {};
 
    const backgrounds = [
-    "/elements/scary-monster-foggy-forest-night.jpg",
-    "/elements/cartoon-soldier-with-combat-war.jpg",
-    "/elements/man-racing-dirt-bike-fantasy-environment.jpg",
+    "elements/scary-monster-foggy-forest-night.jpg",
+    "elements/cartoon-soldier-with-combat-war.jpg",
+    "elements/man-racing-dirt-bike-fantasy-environment.jpg",
   ];
 
   const [bgIndex, setBgIndex] = useState(0);

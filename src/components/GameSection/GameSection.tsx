@@ -15,11 +15,11 @@ import {
 /* =============================== Data =============================== */
 type Featured = { id: string; title: string; subtitle?: string; cta: string; image: string };
 const FEATURED: Featured[] = [
-  { id: "f1", title: "New and Feane Games", subtitle: "Legendary Mafia", cta: "Download Now", image: "/elements/2151624781.jpg" },
-  { id: "f2", title: "Erigige Britte", subtitle: "Limited time", cta: "Learn More", image: "/elements/2151624782.jpg" },
-  { id: "f3", title: "New Featured Games", subtitle: "Premium picks", cta: "Learn More", image: "/elements/man-wearing-vr-glasses-gaming.jpg" },
-  { id: "f4", title: "Greotofine", subtitle: "Adventure Genre", cta: "Learn More", image: "/elements/cartoon-soldier-with-combat-war.jpg" },
-  { id: "f5", title: "OVINCE", subtitle: "", cta: "Download", image: "/elements/futuristic-ninja-digital-art.jpg" },
+  { id: "f1", title: "New and Feane Games", subtitle: "Legendary Mafia", cta: "Download Now", image: "elements/2151624781.jpg" },
+  { id: "f2", title: "Erigige Britte", subtitle: "Limited time", cta: "Learn More", image: "elements/2151624782.jpg" },
+  { id: "f3", title: "New Featured Games", subtitle: "Premium picks", cta: "Learn More", image: "elements/man-wearing-vr-glasses-gaming.jpg" },
+  { id: "f4", title: "Greotofine", subtitle: "Adventure Genre", cta: "Learn More", image: "elements/cartoon-soldier-with-combat-war.jpg" },
+  { id: "f5", title: "OVINCE", subtitle: "", cta: "Download", image: "elements/futuristic-ninja-digital-art.jpg" },
 ];
 
 type Game = {
@@ -31,16 +31,16 @@ type Game = {
   genre: "Action" | "Adventure" | "RPG" | "Strategy" | "Indie" | "Multiplayer";
 };
 const GAMES: Game[] = [
-  { id: "g1", title: "JAPFICN • Fow Voithip", cover: "/elements/2151500487.jpg", rating: 4.6, tag: "On Sale", genre: "Action" },
-  { id: "g2", title: "MOSCHICS • Min Semars", cover: "/elements/man-racing-dirt-bike-fantasy-environment.jpg", rating: 4.4, tag: "Editor’s Pick", genre: "RPG" },
-  { id: "g3", title: "MOSHICS • Tochtur", cover: "/elements/man-wearing-vr-glasses-gaming.jpg", rating: 4.7, tag: "New", genre: "Strategy" },
-  { id: "g4", title: "Phehe Detip", cover: "/elements/futuristic-ninja-digital-art.jpg", rating: 4.2, tag: "Learn More", genre: "Adventure" },
-  { id: "g5", title: "NIRVAD • Einds Winler", cover: "/elements/scary-monster-foggy-forest-night.jpg", rating: 4.8, tag: "Season 3", genre: "Multiplayer" },
-  { id: "g6", title: "Caw Andeus", cover: "/elements/cartoon-soldier-with-combat-war.jpg", rating: 4.1, genre: "Action" },
-  { id: "g7", title: "John Andrew", cover: "/elements/2151624781.jpg", rating: 4.1, genre: "Action" },
-  { id: "g8", title: "Void Raider", cover: "/elements/2151624782.jpg", rating: 4.5, genre: "Indie" },
-  { id: "g9", title: "City Breaker", cover: "/elements/cartoon-soldier-with-combat-war.jpg", rating: 4.0, genre: "RPG" },
-  { id: "g10", title: "City Breaker", cover: "/elements/scary-monster-foggy-forest-night.jpg", rating: 4.0, genre: "Action" },
+  { id: "g1", title: "JAPFICN • Fow Voithip", cover: "elements/2151500487.jpg", rating: 4.6, tag: "On Sale", genre: "Action" },
+  { id: "g2", title: "MOSCHICS • Min Semars", cover: "elements/man-racing-dirt-bike-fantasy-environment.jpg", rating: 4.4, tag: "Editor’s Pick", genre: "RPG" },
+  { id: "g3", title: "MOSHICS • Tochtur", cover: "elements/man-wearing-vr-glasses-gaming.jpg", rating: 4.7, tag: "New", genre: "Strategy" },
+  { id: "g4", title: "Phehe Detip", cover: "elements/futuristic-ninja-digital-art.jpg", rating: 4.2, tag: "Learn More", genre: "Adventure" },
+  { id: "g5", title: "NIRVAD • Einds Winler", cover: "elements/scary-monster-foggy-forest-night.jpg", rating: 4.8, tag: "Season 3", genre: "Multiplayer" },
+  { id: "g6", title: "Caw Andeus", cover: "elements/cartoon-soldier-with-combat-war.jpg", rating: 4.1, genre: "Action" },
+  { id: "g7", title: "John Andrew", cover: "elements/2151624781.jpg", rating: 4.1, genre: "Action" },
+  { id: "g8", title: "Void Raider", cover: "elements/2151624782.jpg", rating: 4.5, genre: "Indie" },
+  { id: "g9", title: "City Breaker", cover: "elements/cartoon-soldier-with-combat-war.jpg", rating: 4.0, genre: "RPG" },
+  { id: "g10", title: "City Breaker", cover: "elements/scary-monster-foggy-forest-night.jpg", rating: 4.0, genre: "Action" },
 ];
 
 const GENRES = ["Action", "Adventure", "RPG", "Strategy", "Indie", "Multiplayer"] as const;
@@ -348,8 +348,8 @@ export default function GameSection() {
               <div>
                 <p className="text-sm font-semibold mb-2">Coming Soon</p>
                 <div className="flex items-center gap-3">
-                  <img src="/elements/vampire.png" alt="Faster" className="w-12 h-12 rounded-xl ring-1 ring-white/10" />
-                  <img src="/elements/bat.png" alt="Saule" className="w-12 h-12 rounded-xl ring-1 ring-white/10" />
+                  <img src="elements/vampire.png" alt="Faster" className="w-12 h-12 rounded-xl ring-1 ring-white/10" />
+                  <img src="elements/bat.png" alt="Saule" className="w-12 h-12 rounded-xl ring-1 ring-white/10" />
                 </div>
               </div>
               <div>
@@ -419,7 +419,7 @@ export default function GameSection() {
             <div className="sticky top-6">
               <div className="mx-auto w-64 rounded-[2rem] p-3 bg-[#0b0c15] ring-1 ring-white/15 shadow-[0_20px_60px_rgba(0,0,0,.45)]">
                 <div className="rounded-[1.6rem] overflow-hidden bg-[#101426] ring-1 ring-white/10">
-                  <img src="/elements/cartoon-superhero-illustration.jpg" alt="Caw Andeus" className="w-full h-48 object-cover" />
+                  <img src="elements/cartoon-superhero-illustration.jpg" alt="Caw Andeus" className="w-full h-48 object-cover" />
                   <div className="p-3">
                     <p className="font-semibold">Caw Andeus</p>
                     <p className="text-xs text-white/70">⭐ 4.1 • Action</p>

@@ -10,12 +10,12 @@ export const metadata: Metadata  = {
   openGraph: {
     title: "Dracula Gaming Storefront",
     description: "Arena-grade UI for your game store. Shop, pre-order, and checkout easily.",
-    url: "https://yourdomain.com",
-    images: ["/elements/shop/banner-soldier.jpg"],
+    url: "https://radwan503.github.io/Dracula/",
+    images: ["elements/shop/banner-soldier.jpg"],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@yourhandle",
+    site: "@radwananik",
   },
 };
 

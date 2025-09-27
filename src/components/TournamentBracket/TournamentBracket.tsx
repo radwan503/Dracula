@@ -252,7 +252,7 @@ export default function TournamentBracket() {
   );
 
 /* refs to draw lines */
-// eslint-disable-next-line react-hooks/rules-of-hooks
+//eslint-disable-next-line react-hooks/rules-of-hooks
 const hostRef = useRef<HTMLDivElement | null>(null);
 // eslint-disable-next-line react-hooks/rules-of-hooks
 const l1Refs = LEFT_R1.map(() => useRef<HTMLDivElement | null>(null));

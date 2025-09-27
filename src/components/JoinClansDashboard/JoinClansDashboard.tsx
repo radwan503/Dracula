@@ -43,11 +43,11 @@ type Clan = {
 };
 
 const MEMBERS: Member[] = [
-  { id: "m1", name: "Grew", avatar: "/elements/2151624781.jpg", color: "green" },
-  { id: "m2", name: "Oven", avatar: "/elements/2151624782.jpg", color: "yellow" },
-  { id: "m3", name: "Plect", avatar: "/elements/vampire.png", color: "blue" },
-  { id: "m4", name: "Mowin", avatar: "/elements/cartoon-soldier-with-combat-war.jpg", color: "orange" },
-  { id: "m5", name: "Gerot", avatar: "/elements/man-wearing-vr-glasses-gaming.jpg", color: "green" },
+  { id: "m1", name: "Grew", avatar: "elements/2151624781.jpg", color: "green" },
+  { id: "m2", name: "Oven", avatar: "elements/2151624782.jpg", color: "yellow" },
+  { id: "m3", name: "Plect", avatar: "elements/vampire.png", color: "blue" },
+  { id: "m4", name: "Mowin", avatar: "elements/cartoon-soldier-with-combat-war.jpg", color: "orange" },
+  { id: "m5", name: "Gerot", avatar: "elements/man-wearing-vr-glasses-gaming.jpg", color: "green" },
 ];
 
 const INITIAL_CLANS: Clan[] = [
@@ -55,8 +55,8 @@ const INITIAL_CLANS: Clan[] = [
     id: "c1",
     name: "Kativ Oriens",
     desc: "Esports crew • coordinated",
-    badge: "/elements/bat_5922341.png",
-    cover: "/elements/futuristic-ninja-digital-art.jpg",
+    badge: "elements/bat_5922341.png",
+    cover: "elements/futuristic-ninja-digital-art.jpg",
     power: 56,
     active: true,
     members: 38,
@@ -65,8 +65,8 @@ const INITIAL_CLANS: Clan[] = [
     id: "c2",
     name: "Bongie Ulrates",
     desc: "Rogue unit • offense",
-    badge: "/elements/bat.png",
-    cover: "/elements/2151500487.jpg",
+    badge: "elements/bat.png",
+    cover: "elements/2151500487.jpg",
     power: 58,
     active: true,
     members: 22,
@@ -75,8 +75,8 @@ const INITIAL_CLANS: Clan[] = [
     id: "c3",
     name: "Siarro Clan",
     desc: "Strong & close defenders",
-    badge: "/elements/vampire.png",
-    cover: "/elements/scary-monster-foggy-forest-night.jpg",
+    badge: "elements/vampire.png",
+    cover: "elements/scary-monster-foggy-forest-night.jpg",
     power: 67,
     active: false,
     members: 41,
@@ -85,8 +85,8 @@ const INITIAL_CLANS: Clan[] = [
     id: "c4",
     name: "Nebula Forge",
     desc: "Tactical masterminds",
-    badge: "/elements/2151624782.jpg",
-    cover: "/elements/man-wearing-vr-glasses-gaming.jpg",
+    badge: "elements/2151624782.jpg",
+    cover: "elements/man-wearing-vr-glasses-gaming.jpg",
     power: 73,
     active: true,
     members: 51,
@@ -164,8 +164,8 @@ const JoinModal: React.FC<{
       id: crypto.randomUUID(),
       name,
       desc,
-      badge: "/elements/bat.png",
-      cover: "/elements/2151500487.jpg",
+      badge: "elements/bat.png",
+      cover: "elements/2151500487.jpg",
       power: Math.floor(40 + Math.random() * 50),
       active: true,
       members: Math.floor(15 + Math.random() * 60),
@@ -243,7 +243,7 @@ export default function JoinClansDashboard() {
   const [fav, setFav] = useState<Record<string, boolean>>({});
   const [openJoin, setOpenJoin] = useState(false);
 
-  const backgroundUrl = "/elements/front-view-ninja-wearing-equipment_23-2150960894.jpg"
+  const backgroundUrl = "elements/front-view-ninja-wearing-equipment_23-2150960894.jpg"
 
 
   const sorted = useMemo(() => {
@@ -372,7 +372,7 @@ export default function JoinClansDashboard() {
             </button>
             {/* Avatar */}
             <img
-                src="/elements/2151624782.jpg"
+                src="elements/2151624782.jpg"
                 alt="you"
                 className="ml-1 h-9 w-9 rounded-full object-cover ring-1 ring-white/20"
             />
@@ -616,7 +616,7 @@ export default function JoinClansDashboard() {
             <Section title="Promoted Clans">
               <div className="rounded-xl overflow-hidden ring-1 ring-white/10">
                 <img
-                  src="/elements/man-wearing-vr-glasses-gaming.jpg"
+                  src="elements/man-wearing-vr-glasses-gaming.jpg"
                   className="w-full h-28 object-cover"
                   alt="Promo"
                 />

@@ -41,7 +41,7 @@ export default function ContactNeonSection() {
   );
   const [showTop, setShowTop] = useState(false);
   const dropRef = useRef<HTMLLabelElement>(null);
-  const backgroundUrl = "/elements/fantasy-style-scene-with-mountains-landscape_23-2151124960.jpg"
+  const backgroundUrl = "elements/fantasy-style-scene-with-mountains-landscape_23-2151124960.jpg"
 
 
   /* ------------------------------- Derived ------------------------------- */
@@ -152,7 +152,7 @@ export default function ContactNeonSection() {
             className="relative rounded-2xl overflow-hidden ring-1 ring-white/10"
           >
             <img
-              src="/elements/futuristic-ninja-digital-art.jpg"
+              src="elements/futuristic-ninja-digital-art.jpg"
               alt="Banner"
               className="w-full h-64 object-cover"
             />
