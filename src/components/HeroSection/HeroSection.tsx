@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 /** Props **/
 type Props = {
@@ -408,9 +409,9 @@ export default function HeroSection(props: Props) {
 
             {/* Center: Logo */}
             <div className="flex items-center justify-center">
-              <a href="/">
+              <Link href="/">
                 <img src={logoUrl} width={64} height={64} alt="Logo" className="drop-shadow-[0_0_16px_rgba(239,68,68,0.35)]" />
-              </a>
+              </Link>
             </div>
 
             {/* Right: hamburger */}
@@ -429,9 +430,9 @@ export default function HeroSection(props: Props) {
 
             {/* Desktop right-side quick links */}
             <nav className="hidden md:flex items-center gap-6 text-[11px] uppercase tracking-[0.28em]">
-              <a href="#News" className="text-white/85 hover:text-red-300 transition">Blog</a>
-              <a href="/shops" className="text-white/85 hover:text-red-300 transition">Shop</a>
-              <a href="/" className="text-white/85 hover:text-red-300 transition">Landing</a>
+              <Link href="#News" className="text-white/85 hover:text-red-300 transition">Blog</Link>
+              <Link href="/shops" className="text-white/85 hover:text-red-300 transition">Shop</Link>
+              <Link href="/" className="text-white/85 hover:text-red-300 transition">Landing</Link>
             </nav>
           </div>
 

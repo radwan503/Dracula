@@ -3,8 +3,6 @@
 import React, {
   useMemo,
   useRef,
-  useLayoutEffect,
-  useEffect,
   useState,
 } from "react";
 import { motion } from "framer-motion";
@@ -143,73 +141,73 @@ const MatchCard: React.FC<MatchCardProps> = ({ m, refCb, query = "" }) => {
 
 /* =============================== Connectors =============================== */
 /** Draw smooth SVG lines between rounds by measuring card centers. */
-const usePaths = (
-  hostRef: React.RefObject<HTMLDivElement | null>,
-  fromRefs: React.RefObject<HTMLDivElement | null>[],
-  toRefs: React.RefObject<HTMLDivElement | null>[],
-  side: "left" | "right"
-) => {
-  const [paths, setPaths] = useState<string[]>([]);
-  const recompute = () => {
-    const host = hostRef.current;
-    if (!host) return;
-    const hb = host.getBoundingClientRect();
-    const center = (el: HTMLDivElement | null, edge: "left" | "right") => {
-      if (!el) return { x: 0, y: 0 };
-      const b = el.getBoundingClientRect();
-      const x = edge === "left" ? b.left - hb.left : b.right - hb.left;
-      const y = b.top - hb.top + b.height / 2;
-      return { x, y };
-    };
+// const usePaths = (
+//   hostRef: React.RefObject<HTMLDivElement | null>,
+//   fromRefs: React.RefObject<HTMLDivElement | null>[],
+//   toRefs: React.RefObject<HTMLDivElement | null>[],
+//   side: "left" | "right"
+// ) => {
+//   const [paths, setPaths] = useState<string[]>([]);
+//   const recompute = () => {
+//     const host = hostRef.current;
+//     if (!host) return;
+//     const hb = host.getBoundingClientRect();
+//     const center = (el: HTMLDivElement | null, edge: "left" | "right") => {
+//       if (!el) return { x: 0, y: 0 };
+//       const b = el.getBoundingClientRect();
+//       const x = edge === "left" ? b.left - hb.left : b.right - hb.left;
+//       const y = b.top - hb.top + b.height / 2;
+//       return { x, y };
+//     };
 
-    const next: string[] = [];
-    toRefs.forEach((toRef, j) => {
-      const f1 = fromRefs[j * 2]?.current || null;
-      const f2 = fromRefs[j * 2 + 1]?.current || null;
-      const t = toRef.current || null;
-      if (!f1 || !f2 || !t) return;
+//     const next: string[] = [];
+//     toRefs.forEach((toRef, j) => {
+//       const f1 = fromRefs[j * 2]?.current || null;
+//       const f2 = fromRefs[j * 2 + 1]?.current || null;
+//       const t = toRef.current || null;
+//       if (!f1 || !f2 || !t) return;
 
-      const edgeFrom = side === "right" ? "right" : "left";
-      const edgeTo = side === "right" ? "left" : "right";
+//       const edgeFrom = side === "right" ? "right" : "left";
+//       const edgeTo = side === "right" ? "left" : "right";
 
-      const p1 = center(f1, edgeFrom);
-      const p2 = center(f2, edgeFrom);
-      const pt = center(t, edgeTo);
+//       const p1 = center(f1, edgeFrom);
+//       const p2 = center(f2, edgeFrom);
+//       const pt = center(t, edgeTo);
 
-      const dx1 = Math.abs(pt.x - p1.x);
-      const dx2 = Math.abs(pt.x - p2.x);
-      const c1 = dx1 * 0.6;
-      const c2 = dx2 * 0.6;
+//       const dx1 = Math.abs(pt.x - p1.x);
+//       const dx2 = Math.abs(pt.x - p2.x);
+//       const c1 = dx1 * 0.6;
+//       const c2 = dx2 * 0.6;
 
-      const path1 = `M ${p1.x} ${p1.y} C ${p1.x + (side === "right" ? -c1 : c1)} ${
-        p1.y
-      } ${pt.x - (side === "right" ? -c1 : c1)} ${pt.y} ${pt.x} ${pt.y}`;
-      const path2 = `M ${p2.x} ${p2.y} C ${p2.x + (side === "right" ? -c2 : c2)} ${
-        p2.y
-      } ${pt.x - (side === "right" ? -c2 : c2)} ${pt.y} ${pt.x} ${pt.y}`;
-      next.push(path1, path2);
-    });
-    setPaths(next);
-  };
+//       const path1 = `M ${p1.x} ${p1.y} C ${p1.x + (side === "right" ? -c1 : c1)} ${
+//         p1.y
+//       } ${pt.x - (side === "right" ? -c1 : c1)} ${pt.y} ${pt.x} ${pt.y}`;
+//       const path2 = `M ${p2.x} ${p2.y} C ${p2.x + (side === "right" ? -c2 : c2)} ${
+//         p2.y
+//       } ${pt.x - (side === "right" ? -c2 : c2)} ${pt.y} ${pt.x} ${pt.y}`;
+//       next.push(path1, path2);
+//     });
+//     setPaths(next);
+//   };
 
-  useLayoutEffect(recompute, [hostRef, fromRefs, toRefs, side]);
+//   useLayoutEffect(recompute, [hostRef, fromRefs, toRefs, side]);
 
-  // Update on resize & scroll (and font load/layout changes)
-  useEffect(() => {
-    const r = () => recompute();
-    window.addEventListener("resize", r, { passive: true });
-    window.addEventListener("scroll", r, { passive: true });
-    const ro = new ResizeObserver(r);
-    if (hostRef.current) ro.observe(hostRef.current);
-    return () => {
-      window.removeEventListener("resize", r);
-      window.removeEventListener("scroll", r);
-      ro.disconnect();
-    };
-  }, [hostRef]);
+//   // Update on resize & scroll (and font load/layout changes)
+//   useEffect(() => {
+//     const r = () => recompute();
+//     window.addEventListener("resize", r, { passive: true });
+//     window.addEventListener("scroll", r, { passive: true });
+//     const ro = new ResizeObserver(r);
+//     if (hostRef.current) ro.observe(hostRef.current);
+//     return () => {
+//       window.removeEventListener("resize", r);
+//       window.removeEventListener("scroll", r);
+//       ro.disconnect();
+//     };
+//   }, [hostRef]);
 
-  return paths;
-};
+//   return paths;
+// };
 
 // const ConnectorLayer: React.FC<{
 //   hostRef: React.RefObject<HTMLDivElement | null>;
@@ -253,12 +251,16 @@ export default function TournamentBracket() {
     []
   );
 
-  /* refs to draw lines */
+/* refs to draw lines */
+// eslint-disable-next-line react-hooks/rules-of-hooks
 const hostRef = useRef<HTMLDivElement | null>(null);
-
+// eslint-disable-next-line react-hooks/rules-of-hooks
 const l1Refs = LEFT_R1.map(() => useRef<HTMLDivElement | null>(null));
+// eslint-disable-next-line react-hooks/rules-of-hooks
 const l2Refs = LEFT_R2.map(() => useRef<HTMLDivElement | null>(null));
+// eslint-disable-next-line react-hooks/rules-of-hooks
 const r1Refs = RIGHT_R1.map(() => useRef<HTMLDivElement | null>(null));
+// eslint-disable-next-line react-hooks/rules-of-hooks
 const r2Refs = RIGHT_R2.map(() => useRef<HTMLDivElement | null>(null));
 
 const lfRef = useRef<HTMLDivElement | null>(null);

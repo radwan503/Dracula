@@ -116,24 +116,33 @@ function RowSlider({ items }: { items: Game[] }) {
   };
 
   useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-    const onScroll = () => {
-      const children = Array.from(node.children) as HTMLElement[];
-      const mid = node.scrollLeft + node.clientWidth / 2;
-      let best = 0;
-      let bestD = Infinity;
-      children.forEach((el, i) => {
-        const c = el.offsetLeft + el.clientWidth / 2;
-        const d = Math.abs(c - mid);
-        if (d < bestD) (bestD = d), (best = i);
-      });
-      setIdx(best);
-    };
-    onScroll();
-    node.addEventListener("scroll", onScroll, { passive: true });
-    return () => node.removeEventListener("scroll", onScroll);
-  }, [items.length]);
+  const node = ref.current;
+  if (!node) return;
+
+  const onScroll = () => {
+    const children = Array.from(node.children) as HTMLElement[];
+    const mid = node.scrollLeft + node.clientWidth / 2;
+    let best = 0;
+    let bestD = Infinity;
+
+    children.forEach((el, i) => {
+      const c = el.offsetLeft + el.clientWidth / 2;
+      const d = Math.abs(c - mid);
+      if (d < bestD) {
+        bestD = d;
+        best = i;
+      }
+    });
+
+    setIdx(best);
+  };
+
+  onScroll();
+  node.addEventListener("scroll", onScroll, { passive: true });
+  return () => node.removeEventListener("scroll", onScroll);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [items.length]); // keep your original dependency
+
 
   return (
     <div className="relative">
@@ -192,22 +201,31 @@ function Coverflow({ items }: { items: Featured[] }) {
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
+
     const onScroll = () => {
       const children = Array.from(node.children) as HTMLElement[];
       const mid = node.scrollLeft + node.clientWidth / 2;
-      let best = 0,
-        bestD = Infinity;
+      let best = 0;
+      let bestD = Infinity;
+
       children.forEach((el, i) => {
         const c = el.offsetLeft + el.clientWidth / 2;
         const d = Math.abs(c - mid);
-        if (d < bestD) (bestD = d), (best = i);
+        if (d < bestD) {
+          bestD = d;
+          best = i;
+        }
       });
+
       setIndex(best);
     };
+
     onScroll();
     node.addEventListener("scroll", onScroll, { passive: true });
     return () => node.removeEventListener("scroll", onScroll);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [items.length]); // keep your original dependency
+
 
   return (
     <div className="relative">

@@ -22,6 +22,7 @@ import {
   CircleX,
   BadgeCheck,
 } from "lucide-react";
+import Link from "next/link";
 
 /* ----------------------------- Mock Data ----------------------------- */
 
@@ -296,11 +297,11 @@ export default function ShopSection() {
       {/* HEADER / BRAND */}
       <div className="sticky top-0 z-30 backdrop-blur supports-[backdrop-filter]:bg-black/60 bg-black/80">
         <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
-          <a href="/">
+          <Link href="/">
           <div className="flex items-center gap-3">
             <Gamepad2 className="text-red-400" />
             <span className="font-semibold tracking-wide">Dracula Shop</span>
-          </div></a>
+          </div></Link>
           <div className="flex items-center gap-3">
             <nav className="hidden sm:flex gap-6 text-sm text-white/70">
               <button className="hover:text-red-300">PC</button>
